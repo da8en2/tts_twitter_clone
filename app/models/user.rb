@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :tweets
+
+  validates :username, presence: true
+  validates :username, uniqueness: true
 end
