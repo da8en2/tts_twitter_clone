@@ -7,7 +7,7 @@
   <div>
     <% @tag.tweets.order(created_at: :desc).each do |tweet| %>
         <p>
-	    <%= tweet.user.name %> <%= “@#{tweet.user.username}” %>
+	    <%= link_to "@" + tweet.user.username, show_user_path(id: tweet.user.id) %>
 	    • <%= time_ago_in_words(tweet.created_at) %>
         </p>
 	<p>

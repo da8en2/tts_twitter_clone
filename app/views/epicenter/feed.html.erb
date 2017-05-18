@@ -5,7 +5,7 @@
 <div>
     <% @following_tweets.each do |tweet| %>
       <div>
-	       <p>@<%= tweet.user.username %></p>
+	       <p><%= link_to "@" + tweet.user.username, show_user_path(id: tweet.user.id) %></p>
 	       <p><%= tweet.message.html_safe %></p>
 	    </div>
     <% end %>
